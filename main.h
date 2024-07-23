@@ -14,6 +14,8 @@ int _putchar(char character);
 #ifndef PERCENT_STRUCTURE
 #define PERCENT_STRUCTURE
 
+#include <stdarg.h>
+
 /**
  * struct percent_indicator - Percent indicator 
  *
