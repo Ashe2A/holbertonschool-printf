@@ -11,8 +11,8 @@ int _putchar(char character);
 
 #endif
 
-#ifndef PERCENT
-#define PERCENT
+#ifndef PERCENT_STRUCTURE
+#define PERCENT_STRUCTURE
 
 /**
  * struct percent_indicator - Percent indicator 
