@@ -69,7 +69,7 @@ here is an example that prints a character:
 int main(void)
 {
     c = 'A';
-    printf("The character is: %c\n", c);
+    _printf("The character is: %c\n", c);
     return (0);
 }
 
@@ -111,7 +111,7 @@ int main(void)
     
     float pourcentage = ((float)valeur_actuelle / valeur_totale) * 100;
     
-    printf("Le pourcentage est de %.2f%%\n", pourcentage);
+    _printf("Le pourcentage est de %.2f%%\n", pourcentage);
     
     return 0;
 }
