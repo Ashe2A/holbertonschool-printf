@@ -14,6 +14,16 @@ int _putchar(char character);
 #ifndef PERCENT
 #define PERCENT
 
+/**
+ * struct percent_indicator - Percent indicator 
+ *
+ * @percent_type: The character following the percent sign
+ * @f: The function associated with the character
+ *
+ * Description: Find which function to call
+depending on the character following a percent sign
+(c for character and s for string)
+ */
 typedef struct percent_indicator
 {
     char percent_type;
