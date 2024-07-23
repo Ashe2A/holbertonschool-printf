@@ -115,4 +115,6 @@ int main(void)
     
     return 0;
 }
+
+stdout: Le pourcentage est de 45.00%
 ```
