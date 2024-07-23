@@ -14,7 +14,7 @@ int _putchar(char character);
 #ifndef PERCENT
 #define PERCENT
 
-typedef structure percent_indicator
+typedef struct percent_indicator
 {
     char percent_type;
 	int (*print_function)(va_list arg_list);
