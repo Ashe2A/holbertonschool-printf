@@ -41,7 +41,7 @@ int print_string(va_list list)
 
 		return (6);
 	}
-	
+
 	for (cpt = 0; str[cpt] != '\0'; cpt++)
 	{
 		_putchar(str[cpt]);
