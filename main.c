@@ -20,8 +20,8 @@ int main(void)
 	addr = (void *)0x7ffe637541f0;
 
 	/* _printf("Length:[%d, %i]\n", len, len); */
-    /* _printf("Length:[%d, %i]\n", len2, len2); */
 	printf("Length:[%d, %i]\n", len, len);
+    /* _printf("Length:[%d, %i]\n", len2, len2); */
     printf("Length:[%d, %i]\n", len2, len2);
 	/* _printf("Negative:[%d]\n", -762534); */
 	printf("Negative:[%d]\n", -762534);
@@ -44,6 +44,8 @@ int main(void)
 	len2 = printf("Percent:[%%]\n");
 
 	/* _printf("Len:[%d]\n", len); */
+	printf("Len:[%d]\n", len);
+	/* _printf("Len:[%d]\n", len2); */
 	printf("Len:[%d]\n", len2);
 	/* _printf("Unknown:[%r]\n"); */
 	printf("Unknown:[%r]\n");
