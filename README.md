@@ -118,3 +118,9 @@ int main(void)
 
 stdout: Percentage display: 45.00%
 ```
+
+### **4. Testing and Explanation**
+
+### **5. Flowchart**
+
+![375](https://github.com/user-attachments/assets/cdf05e8c-8f39-414f-835c-b902cb2783c3)
