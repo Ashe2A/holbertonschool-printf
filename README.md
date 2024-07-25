@@ -106,15 +106,9 @@ here is an example which prints a percent:
  */
 int main(void)
 {
-    int valeur_actuelle = 45;
-    int valeur_totale = 100;
-    
-    float pourcentage = ((float)valeur_actuelle / valeur_totale) * 100;
-    
-    _printf("Le pourcentage est de %.2f%%\n", pourcentage);
-    
+    printf("Affichage d'un pourcentage : %%\n");
     return 0;
 }
 
-stdout: Le pourcentage est de 45.00%
+stdout: Affichage d'un pourcentage : %
 ```
