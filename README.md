@@ -19,7 +19,7 @@ This project aims to re-create the printf functions.
   - Print a string
   - Print a percent
 
-4. Testing and Explanation
+4. Explanation
 
 5. Flowchart
 
@@ -119,7 +119,21 @@ int main(void)
 stdout: Percentage display: 45.00%
 ```
 
-### **4. Testing and Explanation**
+### **4. Explanation**
+
+This code defines a function called _printf that prints a string with special format handling. Here's a simple explanation of how it works:
+
+The _printf function takes a format string and a variable number of arguments. The format string can include format specifiers (like %c, %s, %d) that indicate how the additional arguments should be formatted and displayed.
+
+Argument Initialization: The function starts by initializing a variable argument list to access the additional data passed to the function.
+
+Specifier Handling: It then processes each character in the format string. If it encounters a %, it checks what type of format is specified (such as c for a character, s for a string, or d for an integer). Depending on the type, it calls the appropriate function to display the corresponding argument.
+
+Character Display: If the character following % is not a known specifier, it prints % followed by the next character. If it is not a %, it simply prints the character as it is.
+
+Returning the Number of Characters: Finally, the function returns the total number of characters printed.
+
+In summary, _printf allows printing strings with formatted arguments based on defined specifiers while counting and returning the total number of printed characters.
 
 ### **5. Flowchart**
 
