@@ -33,11 +33,11 @@ int _printf(const char *format, ...)
 						printed += (ipt_ind[ipt_cpt].print_func)(ipt_data);
 				char_cpt++;
 			}
-			/* else if ((format[char_cpt] == '\\') && (format[char_cpt + 1] == '%'))
+			else if ((format[char_cpt] == '\\') && (format[char_cpt + 1] == '%'))
 			{
 				_putchar('%');
 				char_cpt++;
-			} */
+			}
 			else
 				_putchar(format[ipt_cpt]);
 			printed++;
