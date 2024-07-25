@@ -17,6 +17,8 @@ int _printf(const char *format, ...)
 	pct_t ipt_ind[] = {
 		{'c', print_char},
 		{'s', print_string},
+		{'i', print_int},
+		{'d', print_int},
 		{'%', print_percent},
 		{'\0', NULL}};
 
