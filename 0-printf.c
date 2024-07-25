@@ -16,6 +16,7 @@ int _printf(const char *format, ...)
 	pct_t input_list[] = {
 		{'c', print_char},
 		{'s', print_string},
+		{'%', print_percent},
 		{'\0', NULL}};
 
 	va_start(input_data, format);
