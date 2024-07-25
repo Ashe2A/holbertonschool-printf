@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 
 			char_cpt++;
 		}
-		else ((format[char_cpt] == '\\') && (format[char_cpt + 1] == '%'))
+		else if ((format[char_cpt] == '\\') && (format[char_cpt + 1] == '%'))
 		{
 			_putchar('%');
 			char_cpt++;
