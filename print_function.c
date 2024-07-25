@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stddef.h>
-#include <stdlib.h>
+#include <stdio.h>
 
 /**
  * print_char - print a character
@@ -32,9 +32,9 @@ int print_int(va_list args)
 
 	if (arg != 0)
 	{
-		for (cpt = 0; itoa(arg) != '\0'; cpt++)
+		for (cpt = 0; sprintf(arg) != '\0'; cpt++)
 		{
-			_putchar(itoa(arg)[cpt]);
+			_putchar(sprintf(arg)[cpt]);
 		}
 		return (cpt);
 	}
