@@ -27,15 +27,15 @@ int _printf(const char *format, ...)
 		for (char_cpt = 0; format[char_cpt] != '\0'; char_cpt++)
 			if (format[char_cpt] == '%')
 			{
+				char_cpt++;
 				for (ipt_cpt = 0; (ipt_ind[ipt_cpt].type != '\0'); ipt_cpt++)
 					if (format[char_cpt] == ipt_ind[ipt_cpt].type)
 					{
 						printed += (ipt_ind[ipt_cpt].pfunc)(ipt_data);
-						char_cpt++;
+						break;
 					}
 				if (ipt_ind[ipt_cpt].type == '\0')
 				{
-					char_cpt++;
 					_putchar('%');
 					_putchar(format[char_cpt]);
 					printed += 2;
