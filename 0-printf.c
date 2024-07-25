@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 {
 	int char_cpt, ipt_cpt, printed;
 	va_list ipt_data;
-	pct_t ipt_cpt[] = {
+	pct_t ipt_ind[] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'%', print_percent},
@@ -27,10 +27,10 @@ int _printf(const char *format, ...)
 		{
 			if ((format[char_cpt] == '%'))
 			{
-				for (ipt_cpt = 0; (ipt_cpt[ipt_cpt].percent_type != '\0')
-				|| (ipt_cpt[ipt_cpt].print_func != NULL); ipt_cpt++)
-					if (format[char_cpt + 1] == ipt_cpt[ipt_cpt].percent_type)
-						printed += (ipt_cpt[ipt_cpt].print_func)(ipt_data);
+				for (ipt_cpt = 0; (ipt_ind[ipt_cpt].percent_type != '\0')
+				|| (ipt_ind[ipt_cpt].print_func != NULL); ipt_cpt++)
+					if (format[char_cpt + 1] == ipt_ind[ipt_cpt].percent_type)
+						printed += (ipt_ind[ipt_cpt].print_func)(ipt_data);
 				char_cpt++;
 			}
 			else if ((format[char_cpt] == '\\') && (format[char_cpt + 1] == '%'))
