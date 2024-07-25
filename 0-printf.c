@@ -20,7 +20,6 @@ int _printf(const char *format, ...)
 		{'\0', NULL}};
 
 	va_start(input_data, format);
-
 	printed_chars = 0;
 
 	for (char_cpt = 0; (format[char_cpt] != '\0')
@@ -29,14 +28,9 @@ int _printf(const char *format, ...)
 		if ((format[char_cpt] == '%'))
 		{
 			for (input_cpt = 0; (input_list[input_cpt].percent_type != '\0')
-			&& (input_list[input_cpt].print_function != NULL); input_cpt++)
-			{
+			|| (input_list[input_cpt].print_function != NULL); input_cpt++)
 				if (format[char_cpt + 1] == input_list[input_cpt].percent_type)
-				{
 					printed_chars += (input_list[input_cpt].print_function)(input_data);
-				}
-			}
-
 			char_cpt++;
 		}
 		else if ((format[char_cpt] == '\\') && (format[char_cpt + 1] == '%'))
@@ -45,13 +39,9 @@ int _printf(const char *format, ...)
 			char_cpt++;
 		}
 		else
-		{
 			_putchar(format[input_cpt]);
-			printed_chars++;
-		}
+		printed_chars++;
 	}
-
 	va_end(input_data);
-
 	return (printed_chars);
 }
