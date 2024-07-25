@@ -1,0 +1,80 @@
+.TH _PRINTF "28 Mars 2024" "1.0" "printf man page"
+
+.SH NAME
+_printf - Reproduce the printf function
+
+.SH AUTHORS
+This man page was created by Jeremy Sousa and Achraf Jeddi
+
+.SH SYNOPSIS
+#include "main.h"
+
+int _printf(const char *format, ...);
+
+.SH DESCRIPTION
+
+_printf is a function that reproduces the functionality of the standard C library printf function.
+It takes a format string and optional arguments and prints the formatted output to the standard output stream.
+
+The format string can contain conversion specifiers that begin with a '%' character,
+followed by optional flags, width, precision, and length modifiers, and finally a conversion specifier character that specifies the type of data to be printed.
+
+The following conversion specifiers are supported:
+
+%c Print a single character.
+%s Print a string.
+%% Print a '%' character.
+
+.SH RETURN VALUE
+Upon successful completion, _printf returns the number of characters printed (excluding the null byte used to terminate output to strings).
+If an output error is encountered, a negative value is returned.
+
+.SH EXAMPLES
+The following example demonstrates the usage of _printf:
+_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+#include "main.h"
+/**
+ * main - main function
+ *
+ * Return: 0
+ */
+int main(void)
+{
+    _printf("Hello, my name is %s!\n", "Jeremy");
+    return (0);
+}
+
+stdout: Hello, my name is Jeremy
+_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+#include "main.h"
+/**
+ * main - main function
+ *
+ * Return: 0
+ */
+int main(void)
+{
+    char letter = 'o'
+
+    _printf("C is c%c%cl!\n", letter, letter);
+    return (0);
+}
+
+stdout: C is cool!
+_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+#include "main.h"
+/**
+ * main - main function
+ *
+ * Return: 0
+ */
+int main(void)
+{
+    _printf("100%% perdant !\n");
+    return (0);
+}
+
+stdout: 100% perdant !
