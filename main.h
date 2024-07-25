@@ -5,8 +5,8 @@
 /**
  * struct percent_indicator - Percent indicator
  *
- * @percent_type: The character following the percent sign
- * @print_func: The function associated with the character
+ * @type: The character following the percent sign
+ * @pfunc: The function associated with the character
  *
  * Description: Find which function to call
  * depending on the character following a percent sign
@@ -14,8 +14,8 @@
  */
 typedef struct percent_indicator
 {
-	char percent_type;
-	int (*print_func)(va_list);
+	char type;
+	int (*pfunc)(va_list);
 } pct_t;
 
 int _printf(const char *, ...);
