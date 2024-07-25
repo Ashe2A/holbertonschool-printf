@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 	printed_chars = 0;
 
 	for (char_cpt = 0; (format[char_cpt] != '\0')
-	|| (format != NULL); char_cpt++)
+	&& (format != NULL); char_cpt++)
 	{
 		if ((format[char_cpt] == '%'))
 		{
