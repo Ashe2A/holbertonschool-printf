@@ -41,7 +41,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			_putchar(format[i]);
+			_putchar(format[input_cpt]);
 			printed_chars++;
 		}
 	}

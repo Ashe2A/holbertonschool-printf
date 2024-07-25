@@ -56,7 +56,7 @@ int print_string(va_list list)
  * Return: Always 1 (a character is 1 of length)
  */
 
-int print_percent(void)
+int print_percent(va_list list __attribute__((unused)))
 {
 	_putchar('%');
 	return (1);

@@ -22,7 +22,7 @@ int _printf(const char *, ...);
 
 int print_char(va_list);
 int print_string(va_list);
-int print_percent(void);
+int print_percent(va_list);
 
 int _putchar(char);
 
