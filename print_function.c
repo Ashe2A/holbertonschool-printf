@@ -32,9 +32,9 @@ int print_int(va_list args)
 
 	if (arg != 0)
 	{
-		for (cpt = 0; atoi(arg) != '\0'; cpt++)
+		for (cpt = 0; itoa(arg) != '\0'; cpt++)
 		{
-			_putchar(atoi(arg)[cpt]);
+			_putchar(itoa(arg)[cpt]);
 		}
 		return (cpt);
 	}
