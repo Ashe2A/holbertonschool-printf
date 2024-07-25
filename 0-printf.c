@@ -44,5 +44,5 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(ipt_data);
-	return (printed);
+	return (printed - 1);
 }
