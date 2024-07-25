@@ -64,13 +64,13 @@ here is an example that prints a character:
 /**
  * main - main function
  *
- * Return: 0
+ * Return: 0 (SUCCESS)
  */
 int main(void)
 {
-    c = 'A';
-    _printf("The character is: %c\n", c);
-    return (0);
+	c = 'A';
+	_printf("The character is: %c\n", c);
+	return (0);
 }
 
 stdout: The character is: A
@@ -83,7 +83,7 @@ here is an example which prints a character string:
 /**
  * main - main function
  *
- * Return: 0
+ * Return: Always 0 (SUCCESS)
  */
 int main(void)
 {
@@ -95,7 +95,7 @@ int main(void)
 stdout: Hello world !
 ```
 
-here is an example which prints a percent:
+Here is an example which prints a percent:
 
 ```c
 #include "main.h"
@@ -106,9 +106,15 @@ here is an example which prints a percent:
  */
 int main(void)
 {
-    printf("Affichage d'un pourcentage : %%\n");
-    return 0;
+	int current_value = 45;
+	int total_value = 100;
+
+	float percentage = ((float)current_value / total_value) * 100;
+
+	_printf("Percentage display: %.2f%%\n", percentage);
+
+	return (0);
 }
 
-stdout: Affichage d'un pourcentage : %
+stdout: Percentage display: 45.00%
 ```
