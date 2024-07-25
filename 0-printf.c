@@ -17,7 +17,6 @@ int _printf(const char *format, ...)
 		{'c', print_char},
 		{'s', print_string},
 		{'%', print_percent},
-		{'\%', print_percent},
 		{'\0', NULL}};
 
 	va_start(input_data, format);
@@ -38,6 +37,11 @@ int _printf(const char *format, ...)
 				}
 			}
 
+			char_cpt++;
+		}
+		else ((format[char_cpt] == '\\') && (format[char_cpt + 1] == '%'))
+		{
+			_putchar('%');
 			char_cpt++;
 		}
 		else
