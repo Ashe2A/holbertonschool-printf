@@ -7,11 +7,11 @@
  * @format: string to print
  * @...: data to input within the format string
  *
- * Return: Always 0 (SUCCESS)
+ * Return: number of printed characters
  */
 int _printf(const char *format, ...)
 {
-	int i, j;
+	int char_cpt, input_cpt, printed_chars;
 	va_list input_data;
 	pct_t input_list[] = {
 		{'c', print_char},
@@ -21,20 +21,32 @@ int _printf(const char *format, ...)
 
 	va_start(input_data, format);
 
-	for (i = 0; (format[i] != '\0') || (format != NULL); i++)
+	printed_chars = 0;
+
+	for (char_cpt = 0; (format[char_cpt] != '\0')
+	|| (format != NULL); char_cpt++)
 	{
-		if ((format[i] == '%'))
+		if ((format[char_cpt] == '%'))
 		{
-			for (j = 0; (input_list[j].percent_type != '\0')
-			&& (input_list[j].print_function != NULL); j++)
+			for (input_cpt = 0; (input_list[input_cpt].percent_type != '\0')
+			&& (input_list[input_cpt].print_function != NULL); input_cpt++)
 			{
-				if (format[i + 1] == input_list[j].percent_type)
+				if (format[char_cpt + 1] == input_list[input_cpt].percent_type)
 				{
-					(input_list[j].print_function)(input_data);
+					printed_chars += (input_list[input_cpt].print_function)(input_data);
 				}
 			}
+
+			char_cpt++;
+		}
+		else
+		{
+			_putchar(format[i]);
+			printed_chars++;
 		}
 	}
 
-	return (0);
+	va_end(input_data);
+
+	return (printed_chars);
 }

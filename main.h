@@ -14,7 +14,7 @@ depending on the character following a percent sign
  */
 typedef struct percent_indicator
 {
-    char percent_type;
+	char percent_type;
 	int (*print_function)(va_list);
 } pct_t;
 

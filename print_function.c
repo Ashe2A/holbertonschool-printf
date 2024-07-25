@@ -4,7 +4,8 @@
 /**
  * print_char - print a character
  * @args: prints a arguments
- * Return: character
+ *
+ * Return: Always 1 (1 character)
  */
 
 int print_char(va_list args)
@@ -12,43 +13,47 @@ int print_char(va_list args)
 	char c;
 
 	c = va_arg(args, int);
-	return (_putchar(c));
+	_putchar(c);
+
+	return (1);
 }
 
 /**
  * print_string - print a string
  * @list: arguments string
- * Return: cpt
+ *
+ * Return: Size of the string
  */
 
 int print_string(va_list list)
 {
-	int cpt, len = 0;
+	int cpt;
 	char *str = va_arg(list, char *);
 
 	if (str == NULL)
 	{
-		len = len + _putchar('(');
-		len = len + _putchar('n');
-		len = len + _putchar('u');
-		len = len + _putchar('l');
-		len = len + _putchar('l');
-		len = len + _putchar(')');
+		_putchar('(');
+		_putchar('n');
+		_putchar('u');
+		_putchar('l');
+		_putchar('l');
+		_putchar(')');
+
+		return (6);
 	}
-	else
+	
+	for (cpt = 0; str[cpt] != '\0'; cpt++)
 	{
-		for (cpt = 0; str[cpt] != '\0'; cpt++)
-		{
-			_putchar(str[cpt]);
-			len++;
-		}
+		_putchar(str[cpt]);
 	}
-	return (len);
+
+	return (cpt);
 }
 
 /**
  * print_percent - print percent
- * Return: percent
+ *
+ * Return: Always 1 (a character is 1 of length)
  */
 
 int print_percent(void)
