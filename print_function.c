@@ -43,6 +43,7 @@ int print_int(va_list args)
 		int_str = malloc(sizeof(char));
 		int_str[cpt] = (arg_tmp % 10) + '0';
 		cpt++;
+		arg_tmp /= 10;
 	}
 	if (arg < 0)
 	{
