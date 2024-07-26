@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdarg.h>
 #include <stddef.h>
+#include <string.h>
 
 /**
  * _printf - string printing function
@@ -21,7 +22,7 @@ int _printf(const char *format, ...)
 		{'%', print_percent},
 		{'\0', NULL}};
 
-	if ((format == NULL) || (format == "%"))
+	if ((format == NULL) || (strcmp(format, "%")))
 		return (-1);
 	va_start(ipt_data, format);
 	printed = print_all(ipt_ind, ipt_data, format);
