@@ -40,14 +40,14 @@ int print_int(va_list args)
 	cpt = 0;
 	while (arg_tmp != 0)
 	{
-		int_str = malloc(sizeof(char));
+		int_str = malloc(sizeof(char) * (cpt + 1));
 		int_str[cpt] = (arg_tmp % 10) + '0';
 		cpt++;
 		arg_tmp /= 10;
 	}
 	if (arg < 0)
 	{
-		int_str = malloc(sizeof(char));
+		int_str = malloc(sizeof(char) * (cpt + 1));
 		int_str[cpt] = '-';
 		cpt++;
 	}
