@@ -30,13 +30,12 @@ int print_int(va_list args)
 	int cpt, rev_cpt, arg, arg_tmp;
 	char *int_str;
 
+	arg = va_arg(args, int);
 	if (arg == 0)
 	{
 		_putchar('0');
 		return (1);
 	}
-	
-	arg = va_arg(args, int);
 	cpt = 0;
 	while (arg_tmp != 0)
 	{
@@ -44,21 +43,16 @@ int print_int(va_list args)
 		int_str[cpt] = (arg_tmp % 10) + '0';
 		cpt++;
 	}
-
 	if (arg < 0)
 	{
 		int_str = malloc(sizeof(char));
 		int_str[cpt] = '-';
 		cpt++;
 	}
-
 	free(int_str);
-
 	arg_tmp = arg;
 	for (rev_cpt = 0; rev_cpt < cpt; rev_cpt++)
-	{
 		_putchar(int_str[cpt - 1]);
-	}
 	return (cpt);
 }
 
