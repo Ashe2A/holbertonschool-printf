@@ -3,33 +3,6 @@
 #include <stddef.h>
 
 /**
- * _printf - string printing function
- * @format: string to print
- * @...: data to input within the format string
- *
- * Return: number of printed characters
- */
-int _printf(const char *format, ...)
-{
-	int printed;
-	va_list ipt_data;
-	pct_t ipt_ind[] = {
-		{'c', print_char},
-		{'s', print_string},
-		/* {'i', print_int},
-		{'d', print_int}, */
-		{'%', print_percent},
-		{'\0', NULL}};
-
-	if ((format == NULL) || ((format[0] == '%') && (format[1] == '\0')))
-		return (-1);
-	va_start(ipt_data, format);
-	printed = print_all(ipt_ind, ipt_data, format);
-	va_end(ipt_data);
-	return (printed);
-}
-
-/**
  * print_all - print each character and count them
  * @index: input indexes after percent sign
  * @data: list of parameters
@@ -66,5 +39,32 @@ int print_all(pct_t index[], va_list data, const char *format)
 			printed++;
 		}
 	}
+	return (printed);
+}
+
+/**
+ * _printf - string printing function
+ * @format: string to print
+ * @...: data to input within the format string
+ *
+ * Return: number of printed characters
+ */
+int _printf(const char *format, ...)
+{
+	int printed;
+	va_list ipt_data;
+	pct_t ipt_ind[] = {
+		{'c', print_char},
+		{'s', print_string},
+		/* {'i', print_int},
+		{'d', print_int}, */
+		{'%', print_percent},
+		{'\0', NULL}};
+
+	if ((format == NULL) || ((format[0] == '%') && (format[1] == '\0')))
+		return (-1);
+	va_start(ipt_data, format);
+	printed = print_all(ipt_ind, ipt_data, format);
+	va_end(ipt_data);
 	return (printed);
 }
