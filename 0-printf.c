@@ -21,14 +21,12 @@ int _printf(const char *format, ...)
 		{'%', print_percent},
 		{'\0', NULL}};
 
-	va_start(ipt_data, format);
-	printed = 0;
 	if (format == NULL)
-	{
-		va_end(ipt_data);
 		return (0);
-	}
 	for (char_cpt = 0; format[char_cpt] != '\0'; char_cpt++)
+	{
+		printed = 0;
+		va_start(ipt_data, format);
 		if (format[char_cpt] == '%')
 		{
 			char_cpt++;
@@ -50,6 +48,7 @@ int _printf(const char *format, ...)
 			_putchar(format[char_cpt]);
 			printed++;
 		}
+	}
 	va_end(ipt_data);
 	return (printed);
 }
