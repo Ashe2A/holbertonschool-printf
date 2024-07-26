@@ -27,7 +27,7 @@ int print_char(va_list args)
  */
 int print_int(va_list args)
 {
-	int cpt, str_cpt, arg, arg_tmp;
+	int cpt, rev_cpt, arg, arg_tmp;
 	char *int_str;
 
 	if (arg == 0)
@@ -55,7 +55,7 @@ int print_int(va_list args)
 	free(int_str);
 
 	arg_tmp = arg;
-	for (str_cpt = 0; str_cpt < str; str_cpt++)
+	for (rev_cpt = 0; rev_cpt < cpt; rev_cpt++)
 	{
 		_putchar(int_str[cpt - 1]);
 	}
