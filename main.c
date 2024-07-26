@@ -11,10 +11,10 @@ int main(void)
 {
 	int len, len2;
 
-	/* len = _printf("_Print a %%simple% sentence (%c, %s).\n", 'c', "String");
+	len = _printf("_Print a %%simple% sentence (%c, %s).\n", 'c', "String");
 	len2 = printf("Print a %%simple% sentence (%c, %s).\n", 'c', "String");
 	printf("Length:[%d, %i]\n", len, len);
-	printf("Length:[%d, %i]\n", len2, len2); */
+	printf("Length:[%d, %i]\n", len2, len2);
 
 	len = _printf(NULL);
 	len2 = printf(NULL);

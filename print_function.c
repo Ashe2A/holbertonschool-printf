@@ -90,6 +90,7 @@ int print_string(va_list list)
 
 /**
  * print_percent - print percent
+ * @list: arguments string (unused)
  *
  * Return: Always 1 (a character is 1 of length)
  */
