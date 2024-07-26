@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		{'\0', NULL}};
 
 	if (format == NULL)
-		return (0);
+		return (-1);
 	va_start(ipt_data, format);
 	printed = print_all(ipt_ind, ipt_data, format);
 	va_end(ipt_data);
