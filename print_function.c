@@ -31,6 +31,7 @@ int print_int(va_list args)
 	char *int_str;
 
 	arg = va_arg(args, int);
+	arg_tmp = arg;
 	if (arg == 0)
 	{
 		_putchar('0');
