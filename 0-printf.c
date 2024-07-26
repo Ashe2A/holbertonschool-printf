@@ -11,8 +11,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int char_cpt, ipt_cpt, printed; /* ipt_cpt = input counter */
-	/* printed = number printed characters */
+	int char_cpt, ipt_cpt, printed;
 	va_list ipt_data;
 	pct_t ipt_ind[] = {
 		{'c', print_char},
@@ -24,31 +23,33 @@ int _printf(const char *format, ...)
 
 	va_start(ipt_data, format);
 	printed = 0;
-	if (format != NULL)
+	if (format == NULL)
 	{
-		for (char_cpt = 0; format[char_cpt] != '\0'; char_cpt++)
-			if (format[char_cpt] == '%')
-			{
-				char_cpt++;
-				for (ipt_cpt = 0; (ipt_ind[ipt_cpt].type != '\0'); ipt_cpt++)
-					if (format[char_cpt] == ipt_ind[ipt_cpt].type)
-					{
-						printed += (ipt_ind[ipt_cpt].pfunc)(ipt_data);
-						break;
-					}
-				if (ipt_ind[ipt_cpt].type == '\0')
-				{
-					_putchar('%');
-					_putchar(format[char_cpt]);
-					printed += 2;
-				}
-			}
-			else
-			{
-				_putchar(format[char_cpt]);
-				printed++;
-			}
+		va_end(ipt_data);
+		return (0);
 	}
+	for (char_cpt = 0; format[char_cpt] != '\0'; char_cpt++)
+		if (format[char_cpt] == '%')
+		{
+			char_cpt++;
+			for (ipt_cpt = 0; (ipt_ind[ipt_cpt].type != '\0'); ipt_cpt++)
+				if (format[char_cpt] == ipt_ind[ipt_cpt].type)
+				{
+					printed += (ipt_ind[ipt_cpt].pfunc)(ipt_data);
+					break;
+				}
+			if (ipt_ind[ipt_cpt].type == '\0')
+			{
+				_putchar('%');
+				_putchar(format[char_cpt]);
+				printed += 2;
+			}
+		}
+		else
+		{
+			_putchar(format[char_cpt]);
+			printed++;
+		}
 	va_end(ipt_data);
 	return (printed);
 }
