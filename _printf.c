@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
  *
  * Return: number of printed characters
  */
-int print_all(pct_t index, va_list data, char *format)
+int print_all(pct_t index[], va_list data, char *format)
 {
 	int char_cpt, ipt_cpt;
 
