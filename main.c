@@ -18,12 +18,12 @@ int main(void)
 
 	len = _printf(NULL);
 	len2 = printf(NULL);
-	printf("NULL Length (printf):[%d, %i]\n", len, len);
-	printf("NULL Length (_printf):[%d, %i]\n", len2, len2);
+	printf("NULL length (_printf):[%d, %i]\n", len, len);
+	printf("NULL length (printf):[%d, %i]\n", len2, len2);
 
 	len = _printf("%");
 	len2 = printf("%");
-	printf("Percent Length (printf):[%d, %i]\n", len, len);
-	printf("Percent Length (_printf):[%d, %i]\n", len2, len2);
+	printf("Percent length (_printf):[%d, %i]\n", len, len);
+	printf("Percent length (printf):[%d, %i]\n", len2, len2);
 	return (0);
 }
