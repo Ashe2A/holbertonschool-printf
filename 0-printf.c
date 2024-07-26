@@ -11,11 +11,13 @@
  */
 int _printf(const char *format, ...)
 {
-	int char_cpt, ipt_cpt, printed;
+	int printed;
 	va_list ipt_data;
 	pct_t ipt_ind[] = {
 		{'c', print_char},
 		{'s', print_string},
+		/* {'i', print_int},
+		{'d', print_int}, */
 		{'%', print_percent},
 		{'\0', NULL}};
 
@@ -23,18 +25,34 @@ int _printf(const char *format, ...)
 		return (0);
 	printed = 0;
 	va_start(ipt_data, format);
+	printed = print_chars(ipt_ind);
+	va_end(ipt_data);
+	return (printed);
+}
+
+/**
+ * percent_input - print each character and count them
+ * @index: input indexes after percent sign
+ * @data: list of parameters
+ *
+ * Return: number of printed characters
+ */
+int print_chars(pct_t index, va_list data)
+{
+	int char_cpt, ipt_cpt;
+
 	for (char_cpt = 0; format[char_cpt] != '\0'; char_cpt++)
 	{
 		if (format[char_cpt] == '%')
 		{
 			char_cpt++;
-			for (ipt_cpt = 0; (ipt_ind[ipt_cpt].type != '\0'); ipt_cpt++)
-				if (format[char_cpt] == ipt_ind[ipt_cpt].type)
+			for (ipt_cpt = 0; (index[ipt_cpt].type != '\0'); ipt_cpt++)
+				if (format[char_cpt] == index[ipt_cpt].type)
 				{
-					printed += (ipt_ind[ipt_cpt].pfunc)(ipt_data);
+					printed += (index[ipt_cpt].pfunc)(data);
 					break;
 				}
-			if (ipt_ind[ipt_cpt].type == '\0')
+			if (index[ipt_cpt].type == '\0')
 			{
 				_putchar('%');
 				_putchar(format[char_cpt]);
@@ -47,6 +65,5 @@ int _printf(const char *format, ...)
 			printed++;
 		}
 	}
-	va_end(ipt_data);
 	return (printed);
 }
