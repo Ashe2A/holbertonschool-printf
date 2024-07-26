@@ -23,10 +23,10 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (0);
+	printed = 0;
 	va_start(ipt_data, format);
 	for (char_cpt = 0; format[char_cpt] != '\0'; char_cpt++)
 	{
-		printed = 0;
 		if (format[char_cpt] == '%')
 		{
 			char_cpt++;
