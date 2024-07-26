@@ -23,7 +23,6 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (0);
-	printed = 0;
 	va_start(ipt_data, format);
 	printed = print_all(ipt_ind, ipt_data, format);
 	va_end(ipt_data);
@@ -38,9 +37,10 @@ int _printf(const char *format, ...)
  *
  * Return: number of printed characters
  */
-int print_all(pct_t index[], va_list data, char *format)
+int print_all(pct_t index[], va_list data, const char *format)
 {
 	int char_cpt, ipt_cpt;
+	int printed = 0;
 
 	for (char_cpt = 0; format[char_cpt] != '\0'; char_cpt++)
 	{

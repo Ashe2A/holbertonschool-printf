@@ -19,7 +19,7 @@ typedef struct percent_indicator
 } pct_t;
 
 int _printf(const char *, ...);
-int print_all(pct_t[], va_list, char *);
+int print_all(pct_t[], va_list, const char *);
 
 int print_char(va_list);
 int print_string(va_list);
