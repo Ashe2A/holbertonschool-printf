@@ -51,13 +51,12 @@ int print_int(va_list args)
 		int_str[cpt] = '-';
 		cpt++;
 	}
-	free(int_str);
 	arg_tmp = arg;
 	for (rev_cpt = 0; rev_cpt < cpt; rev_cpt++)
 	{
 		_putchar(int_str[rev_cpt]);
 	}
-	return (cpt);
+	return (rev_cpt);
 }
 
 /**
