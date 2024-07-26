@@ -25,6 +25,7 @@ int _printf(const char *format, ...)
 		return (0);
 	va_start(ipt_data, format);
 	for (char_cpt = 0; format[char_cpt] != '\0'; char_cpt++)
+	{
 		printed = 0;
 		if (format[char_cpt] == '%')
 		{
@@ -47,6 +48,7 @@ int _printf(const char *format, ...)
 			_putchar(format[char_cpt]);
 			printed++;
 		}
+	}
 	va_end(ipt_data);
 	return (printed);
 }
