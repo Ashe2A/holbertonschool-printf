@@ -25,19 +25,20 @@ int _printf(const char *format, ...)
 		return (0);
 	printed = 0;
 	va_start(ipt_data, format);
-	printed = print_chars(ipt_ind);
+	printed = print_all(ipt_ind, ipt_data, format);
 	va_end(ipt_data);
 	return (printed);
 }
 
 /**
- * percent_input - print each character and count them
+ * print_all - print each character and count them
  * @index: input indexes after percent sign
  * @data: list of parameters
+ * @format: string to print
  *
  * Return: number of printed characters
  */
-int print_chars(pct_t index, va_list data)
+int print_all(pct_t index, va_list data, char *format)
 {
 	int char_cpt, ipt_cpt;
 
