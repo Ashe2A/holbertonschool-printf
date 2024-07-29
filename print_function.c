@@ -40,7 +40,7 @@ int print_int(va_list args)
 	if (arg < 0)
 		_putchar('-');
 	for (cpt = 0; arg_tmp != 0; cpt++)
-		arg_tmp /= 10;
+		arg_tmp = arg_tmp / 10;
 	int_str = malloc(sizeof(char) * cpt);
 	arg_tmp = abs(arg);
 	for (rev_cpt = 0; rev_cpt < cpt; rev_cpt++)
