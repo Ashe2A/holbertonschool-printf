@@ -31,32 +31,24 @@ int print_int(va_list args)
 	char *int_str;
 
 	arg = va_arg(args, int);
-	arg_tmp = arg;
 	if (arg == 0)
 	{
 		_putchar('0');
 		return (1);
 	}
-	cpt = 0;
-	while (arg_tmp != 0)
-	{
-		int_str = malloc(sizeof(char) * (cpt + 1));
-		int_str[cpt] = (arg_tmp % 10) + '0';
-		cpt++;
-		arg_tmp /= 10;
-	}
+	arg_tmp = abs(arg);
 	if (arg < 0)
-	{
-		int_str = malloc(sizeof(char) * (cpt + 1));
-		int_str[cpt] = '-';
-		cpt++;
-	}
-	arg_tmp = arg;
+		_putchar('-');
+	for (cpt = 0; arg_tmp != 0; cpt++)
+		arg_tmp /= 10;
+	int_str = malloc(sizeof(char) * cpt);
+	arg_tmp = abs(arg);
 	for (rev_cpt = 0; rev_cpt < cpt; rev_cpt++)
-	{
-		_putchar(int_str[rev_cpt]);
-	}
-	return (rev_cpt);
+		int_str[(cpt - 1) - rev_cpt] = (arg_tmp % 10) + '0';
+	for (cpt = 0; int_str[cpt] != '\0'; cpt++)
+		_putchar(int_str[cpt]);
+	free(int_str);
+	return (cpt);
 }
 
 /**
