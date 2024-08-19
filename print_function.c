@@ -43,9 +43,11 @@ int print_int(va_list args)
 		cpt++;
 	}
 	int_str = malloc(sizeof(char) * cpt);
-	if (arg_tmp == -2147483648)
+	if (arg_tmp == -2147483648)*
+	{
 		print_min_int();
 		return(11);
+	}
 	else
 	{
 		arg_tmp = abs(arg);
