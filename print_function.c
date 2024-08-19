@@ -37,17 +37,17 @@ int print_int(va_list args)
 		_putchar('0');
 		return (1);
 	}
+	if (arg == -2147483648)
+	{
+		print_min_int();
+		return(11);
+	}
 	while (arg_tmp != 0)
 	{
 		arg_tmp /= 10;
 		cpt++;
 	}
 	int_str = malloc(sizeof(char) * cpt);
-	if (arg_tmp == -2147483648)
-	{
-		print_min_int();
-		return(11);
-	}
 	else
 	{
 		arg_tmp = abs(arg);
