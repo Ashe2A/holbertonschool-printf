@@ -49,10 +49,12 @@ int print_int(va_list args)
 	{
 		int_str = malloc(sizeof(char));
 		int_str[cpt] = '-';
+		cpt++;
 	}
 	for (i = 0; i < cpt; i++)
-		_putchar(int_str[(cpt - 1) - i]);
-	return (cpt + 1);
+		_putchar(int_str[cpt - 1 - i]);
+	free(int_str);
+	return (cpt);
 }
 
 /**
