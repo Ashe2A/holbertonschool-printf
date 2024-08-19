@@ -5,23 +5,22 @@
 
 /**
  * print_char - print a character
- * @args: prints a arguments
+ * @args: prints arguments
  *
  * Return: Always 1 (1 character)
  */
 int print_char(va_list args)
 {
-	char c;
+	char c; /* char needed if not cast */
 
 	c = va_arg(args, int);
 	_putchar(c);
-
 	return (1);
 }
 
 /**
  * print_int - print an integer
- * @args: prints a arguments
+ * @args: prints arguments
  *
  * Return: number of digits
  */
@@ -43,7 +42,8 @@ int print_int(va_list args)
 		arg_tmp /= 10;
 		cpt++;
 	}
-	if (arg < 0)
+	arg_tmp = arg;
+	if (arg_tmp < 0)
 	{
 		cpt++;
 		int_str = malloc(sizeof(char) * cpt);
@@ -51,14 +51,14 @@ int print_int(va_list args)
 	}
 	else
 		int_str = malloc(sizeof(char) * cpt);
-	while (arg != 0)
+	while ((arg_tmp != 0) && (int_str[0] != '-'))
 	{
-		int_str[cpt - 1 - i] = (arg % 10) + '0';
-		arg /= 10;
+		int_str[cpt - 1 - i] = (arg_tmp % 10) + '0';
+		arg_tmp /= 10;
 		i++;
 	}
 	for (i = 0; i < cpt; i++)
-		_putchar(int_str[cpt - 1 - i]);
+		_putchar(int_str[i]);
 	free(int_str);
 	return (cpt);
 }
@@ -82,15 +82,10 @@ int print_string(va_list list)
 		_putchar('l');
 		_putchar('l');
 		_putchar(')');
-
 		return (6);
 	}
-
 	for (cpt = 0; str[cpt] != '\0'; cpt++)
-	{
 		_putchar(str[cpt]);
-	}
-
 	return (cpt);
 }
 
