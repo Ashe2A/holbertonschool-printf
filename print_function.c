@@ -44,9 +44,8 @@ int print_int(va_list args)
 	}
 	int_str = malloc(sizeof(char) * cpt);
 	if (arg_tmp == -2147483648)
-	{
 		print_min_int();
-	}
+		return(11);
 	else
 	{
 		arg_tmp = abs(arg);
@@ -110,15 +109,15 @@ int print_percent(va_list list __attribute__((unused)))
  */
 void print_min_int(void)
 {
-		_putchar('-');
-		_putchar('2');
-		_putchar('1');
-		_putchar('4');
-		_putchar('7');
-		_putchar('4');
-		_putchar('8');
-		_putchar('3');
-		_putchar('6');
-		_putchar('4');
-		_putchar('8');
+	_putchar('-');
+	_putchar('2');
+	_putchar('1');
+	_putchar('4');
+	_putchar('7');
+	_putchar('4');
+	_putchar('8');
+	_putchar('3');
+	_putchar('6');
+	_putchar('4');
+	_putchar('8');
 }
