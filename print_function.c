@@ -26,7 +26,7 @@ int print_char(va_list args)
  */
 int print_int(va_list args)
 {
-	int cpt = 1;
+	int cpt = 0;
 	int arg = va_arg(args, int);
 	int arg_tmp = abs(arg);
 	int i = 0;
