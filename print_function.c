@@ -35,7 +35,7 @@ int print_int(va_list args)
 	if (arg_tmp == 0)
 	{
 		_putchar('0');
-		return (cpt);
+		return (1);
 	}
 	while (arg_tmp != 0)
 	{
