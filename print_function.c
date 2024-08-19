@@ -45,6 +45,7 @@ int print_int(va_list args)
 	arg_tmp = arg;
 	if (arg_tmp < 0)
 	{
+		arg_tmp *= 1;
 		cpt++;
 		int_str = malloc(sizeof(char) * cpt);
 		int_str[0] = '-';
