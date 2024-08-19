@@ -59,7 +59,6 @@ int print_int(va_list args)
 		_putchar('-');
 	for (i = 0; i < cpt; i++)
 		_putchar(int_str[cpt - 1 - i]);
-	free(int_str);
 	if (arg < 0)
 		return (cpt + 1);
 	return (cpt);
