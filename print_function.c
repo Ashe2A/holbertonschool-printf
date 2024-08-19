@@ -47,7 +47,7 @@ int print_int(va_list args)
 		arg_tmp /= 10;
 		cpt++;
 	}
-	int_str = malloc(sizeof(char) * cpt);
+	int_str = malloc(sizeof(char) * cpt + 1);
 	arg_tmp = abs(arg);
 	while (arg_tmp != 0)
 	{
@@ -59,6 +59,7 @@ int print_int(va_list args)
 		_putchar('-');
 	for (i = 0; i < cpt; i++)
 		_putchar(int_str[cpt - 1 - i]);
+	free(int_str);
 	if (arg < 0)
 		return (cpt + 1);
 	return (cpt);
