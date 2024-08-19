@@ -48,21 +48,25 @@ int print_int(va_list args)
 		cpt++;
 	}
 	int_str = malloc(sizeof(char) * cpt + 1);
-	arg_tmp = abs(arg);
-	while (arg_tmp != 0)
+	if (int_str != NULL)
 	{
-		int_str[i] = (arg_tmp % 10) + '0';
-		arg_tmp /= 10;
-		i++;
+		arg_tmp = abs(arg);
+		while (arg_tmp != 0)
+		{
+			int_str[i] = (arg_tmp % 10) + '0';
+			arg_tmp /= 10;
+			i++;
+		}
+		if (arg < 0)
+			_putchar('-');
+		for (i = 0; i < cpt; i++)
+			_putchar(int_str[cpt - 1 - i]);
+		free(int_str);
+		if (arg < 0)
+			return (cpt + 1);
+		return (cpt);
 	}
-	if (arg < 0)
-		_putchar('-');
-	for (i = 0; i < cpt; i++)
-		_putchar(int_str[cpt - 1 - i]);
-	free(int_str);
-	if (arg < 0)
-		return (cpt + 1);
-	return (cpt);
+	return (0);
 }
 
 /**
