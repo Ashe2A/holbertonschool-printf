@@ -43,21 +43,28 @@ int print_int(va_list args)
 		cpt++;
 	}
 	int_str = malloc(sizeof(char) * cpt);
-	arg_tmp = abs(arg);
-	while (arg_tmp != 0)
+	if (arg_tmp == -2147483648)
 	{
-		int_str[i] = (arg_tmp % 10) + '0';
-		arg_tmp /= 10;
-		i++;
+		print_min_int();
 	}
-	if (arg < 0)
-		_putchar('-');
-	for (i = 0; i < cpt; i++)
-		_putchar(int_str[cpt - 1 - i]);
-	free(int_str);
-	if (arg < 0)
-		return (cpt + 1);
-	return (cpt);
+	else
+	{
+		arg_tmp = abs(arg);
+		while (arg_tmp != 0)
+		{
+			int_str[i] = (arg_tmp % 10) + '0';
+			arg_tmp /= 10;
+			i++;
+		}
+		if (arg < 0)
+			_putchar('-');
+		for (i = 0; i < cpt; i++)
+			_putchar(int_str[cpt - 1 - i]);
+		free(int_str);
+		if (arg < 0)
+			return (cpt + 1);
+		return (cpt);
+	}
 }
 
 /**
@@ -96,4 +103,22 @@ int print_percent(va_list list __attribute__((unused)))
 {
 	_putchar('%');
 	return (1);
+}
+
+/**
+ * print_min_int - print min int (not long)
+ */
+void print_min_int(void)
+{
+		_putchar('-');
+		_putchar('2');
+		_putchar('1');
+		_putchar('4');
+		_putchar('7');
+		_putchar('4');
+		_putchar('8');
+		_putchar('3');
+		_putchar('6');
+		_putchar('4');
+		_putchar('8');
 }

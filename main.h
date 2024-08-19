@@ -27,5 +27,6 @@ int print_int(va_list);
 int print_percent(va_list);
 
 int _putchar(char);
+void print_min_int(void);
 
 #endif
